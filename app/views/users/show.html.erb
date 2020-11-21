@@ -1,7 +1,10 @@
-<h1><b>HOME PAGE</b></h1>
-
-
 <h1>プロフィール</h1>
+
+<p>
+  <% if @user.avatar.attached? %>
+    <%= image_tag @user.avatar %>
+  <% end %>
+</p>
 
 <h3>名前</h3>
 <%= current_user.name %> 
@@ -11,3 +14,6 @@
 
 <h3>メールアドレス</h3>
 <%= current_user.email %> 
+
+<h3>変更</h3>
+<%# link_to edit_users_path %>
