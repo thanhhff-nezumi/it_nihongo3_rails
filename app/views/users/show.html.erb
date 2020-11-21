@@ -1,20 +1,13 @@
-<%= link_to "ホーム", root_path %> |
-<% if user_signed_in? %>
-    <%= link_to current_user.email, users_show_path %>
-    <%= link_to "サインアウト", destroy_user_session_path, method: :delete %>
-<% else %>
-    <%= link_to "サインイン", new_user_session_path %> | 
-    <%= link_to "ユーザ登録", new_user_registration_path %><br>
-<% end %>
-
-<hr>
 <h1><b>HOME PAGE</b></h1>
 
 
 <h1>プロフィール</h1>
 
 <h3>名前</h3>
-<%# @user.name %> 
+<%= current_user.name %> 
+
+<h3>年齢</h3>
+<%= current_user.age %>
 
 <h3>メールアドレス</h3>
 <%= current_user.email %> 
